@@ -10,7 +10,4 @@ export default class BankManagerHomepage {
     get customersButton() {
         return cy.get(bankManagerHomepageSelectors.customers);
     }
-     addCustomerButtonClick() {
-        this.addCustomerButton.click();
-     }
 }
