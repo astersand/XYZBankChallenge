@@ -4,11 +4,11 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   video: false,
   reporterOptions: {
-    reportDir:'cypress/mochawesomeresults',
     charts: true,
-    reportPageTitle: 'Cypress Inline Reporter',
+    reportPageTitle: 'custom-title',
     embeddedScreenshots: true,
-    inlineAsserts: true, //Adds the asserts inline
+    inlineAssets: true,
+    saveAllAttempts: false,
   },
   e2e: {
     setupNodeEvents(on, config) {
