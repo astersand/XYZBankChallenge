@@ -17,7 +17,7 @@ describe('Bank manager page test', () => {
     const postCode = faker.location.zipCode();
     let accountNumber;
     before('Open homepage', () => {
-        cy.intercept('GET',`${env.baseURL}/options.html`).as('homepage');
+        cy.intercept('GET', `${env.baseURL}/options.html`).as('homepage');
         cy.visit(`${env.baseURL}/#/login`);
         cy.wait('@homepage');
         homepage.bankLoginButtonClick();
@@ -31,21 +31,29 @@ describe('Bank manager page test', () => {
         bankManagerHomepage.addCustomerButton.click();
         bankManagerHomepage.addCustomerButton.invoke('attr', 'class').should('contain', 'btn-primary');
         addCustomerPage.populateForm(firstName, lastName, postCode);
-        addCustomerPage.addCustomerButton.click();
+        let called;
         cy.on('window:alert', (alertText) => {
             expect(alertText).to.contain('Customer added successfully with customer id');
-            return true;
+            called = true;
+        });
+        addCustomerPage.addCustomerButton.click();
+        cy.should(() => {
+            expect(called).to.be.true;
         });
     })
     it('Should create account', () => {
         bankManagerHomepage.openAccountButton.click();
         openAccountPage.customer.select(`${firstName} ${lastName}`);
         openAccountPage.currency.select('Dollar');
-        openAccountPage.processButton.click();
+        let called;
         cy.on('window:alert', (alertText) => {
             expect(alertText).to.contain('Account created successfully with account Number');
             accountNumber = alertText.split(' :')[1];
-            return true;
+            called = true;
+        });
+        openAccountPage.processButton.click();
+        cy.should(() => {
+            expect(called).to.be.true;
         });
     });
     it('Should search for customers succesfully', () => {
@@ -60,7 +68,7 @@ describe('Bank manager page test', () => {
     });
     it('Should delete the customer', () => {
         customersPage.searchField.type(lastName);
-        customersPage.deleteCustomer(0);  
+        customersPage.deleteCustomer(0);
         customersPage.searchField.clear();
         customersPage.rowCount().should('eq', 5);
     });
