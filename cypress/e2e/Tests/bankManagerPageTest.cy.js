@@ -4,6 +4,7 @@ import Homepage from '../Pages/homepage';
 import { faker } from '@faker-js/faker';
 import OpenAccountPage from '../Pages/openAccountPage';
 import CustomersPage from '../Pages/customersPage';
+import env from '../../config/environments';
 
 describe('Bank manager page test', () => {
     const homepage = new Homepage();
@@ -16,8 +17,8 @@ describe('Bank manager page test', () => {
     const postCode = faker.location.zipCode();
     let accountNumber;
     before('Open homepage', () => {
-        cy.intercept('GET', 'https://www.globalsqa.com/angularJs-protractor/BankingProject/options.html').as('homepage');
-        cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login');
+        cy.intercept('GET',`${env.baseURL}/options.html`).as('homepage');
+        cy.visit(`${env.baseURL}/#/login`);
         cy.wait('@homepage');
         homepage.bankLoginButtonClick();
     });

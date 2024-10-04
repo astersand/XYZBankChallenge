@@ -1,12 +1,13 @@
 import Header from '../Pages/header';
 import Homepage from '../Pages/homepage';
+import env from '../../config/environments';
 
 describe('Homepage tests', () => {
     const homepage = new Homepage();
     const header = new Header();
-    beforeEach('Open the test page', () => {
-        cy.intercept('GET', 'https://www.globalsqa.com/angularJs-protractor/BankingProject/options.html').as('homepage');
-        cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login');
+    before('Open the test page', () => {
+        cy.intercept('GET', `${env.baseURL}/options.html`).as('homepage');
+        cy.visit(`${env.baseURL}/#/login`);
         cy.wait('@homepage');
     })
     it('Home button should be visible and enabled', () => {
