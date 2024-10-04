@@ -1,0 +1,14 @@
+{
+  "name": "xyzbankchallenge",
+  "version": "1.0.0",
+  "description": "This is part of https://qa-essentials.com Quality assurance challenges for aspiring QA engineers. It is a testing exercise for improving your test automation skills. You can use any testing framework for your practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.15.0"
+  }
+}
