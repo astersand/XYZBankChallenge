@@ -1,4 +1,4 @@
-import Header from '../Pages/header';
+import Header from '../Pages/Bank Manager Pages/header';
 import Homepage from '../Pages/homepage';
 import env from '../../config/environments';
 

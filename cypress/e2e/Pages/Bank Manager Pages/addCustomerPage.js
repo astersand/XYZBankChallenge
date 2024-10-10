@@ -1,4 +1,4 @@
-import selectors from '../../e2e/Selectors/addCustomerPageSelectors'
+import selectors from '../../Selectors/addCustomerPageSelectors'
 
 export default class AddCustomerPage {
     get firstName() {

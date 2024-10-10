@@ -1,5 +1,5 @@
 import selectors from "../../e2e/Selectors/homepageSelectors"
-import BankManagerHomepage from "./bankManagerHomePage";
+import BankManagerHomepage from "./Bank Manager Pages/bankManagerHomePage";
 
 export default class Homepage {
     

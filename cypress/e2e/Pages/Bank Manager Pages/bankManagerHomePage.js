@@ -1,4 +1,4 @@
-import bankManagerHomepageSelectors from "../../e2e/Selectors/bankManagerHomepageSelectors";
+import bankManagerHomepageSelectors from "../../Selectors/bankManagerHomepageSelectors";
 
 export default class BankManagerHomepage {
     get addCustomerButton() {

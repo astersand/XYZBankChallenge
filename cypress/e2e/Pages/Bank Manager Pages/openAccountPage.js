@@ -1,4 +1,4 @@
-import selectors from '../../e2e/Selectors/openAccountSelectors';
+import selectors from '../../Selectors/openAccountSelectors';
 
 export default class OpenAccountPage {
     get customer() {

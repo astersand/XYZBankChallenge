@@ -1,4 +1,4 @@
-import selectors from "../../e2e/Selectors/customerHomepageSelectors";
+import selectors from "../../Selectors/customerHomepageSelectors";
 
 export default class CustomerHomepage {
     get yourNameDropdown() {

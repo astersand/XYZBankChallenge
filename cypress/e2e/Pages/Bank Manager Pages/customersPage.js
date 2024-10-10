@@ -1,4 +1,4 @@
-import selectors from '../Selectors/customersPageSelectors';
+import selectors from '../../Selectors/customersPageSelectors';
 
 export default class CustomersPage {
     get searchField() {

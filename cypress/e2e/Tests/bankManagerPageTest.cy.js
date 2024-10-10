@@ -1,9 +1,9 @@
-import AddCustomerPage from '../Pages/addCustomerPage';
-import BankManagerHomepage from '../Pages/bankManagerHomePage';
+import AddCustomerPage from '../Pages/Bank Manager Pages/addCustomerPage';
+import BankManagerHomepage from '../Pages/Bank Manager Pages/bankManagerHomePage';
 import Homepage from '../Pages/homepage';
 import { faker } from '@faker-js/faker';
-import OpenAccountPage from '../Pages/openAccountPage';
-import CustomersPage from '../Pages/customersPage';
+import OpenAccountPage from '../Pages/Bank Manager Pages/openAccountPage';
+import CustomersPage from '../Pages/Bank Manager Pages/customersPage';
 import env from '../../config/environments';
 
 describe('Bank manager page test', () => {
