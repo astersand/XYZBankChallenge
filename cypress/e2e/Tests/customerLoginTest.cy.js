@@ -23,7 +23,6 @@ describe('Customer login page', () => {
     });
     it('Should login as a customer', () => {
         if(customerPage.customerSelection.invoke('text') !== 'Hermoine Granger') {
-            cy.pause();
             customerPage.customerSelection.select('Hermoine Granger');
         }
         customerPage.loginButton.click();
