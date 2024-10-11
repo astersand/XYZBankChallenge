@@ -9,5 +9,10 @@ It covers several basic test cases:
  - Creating bank account for new customer
  - Search new customer in the database
  - Delete the customer from the database
+ - Login as customer
+ - Check the number of available customers
+ - Deposit money on account
+ - Withdraw money from account
+ - Check transaction history
 
 The test run should generate the HTML report if you run it via npx cypress run. The report and screenshots should be stored in cypress\reports folder. 
